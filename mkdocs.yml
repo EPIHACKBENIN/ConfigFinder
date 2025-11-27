@@ -12,19 +12,19 @@ theme:
   language: fr
   
   palette:
-    # Mode clair - Thème moderne
+    # Mode clair - EpiHack
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: green
       accent: teal
       toggle:
         icon: material/weather-night
         name: Passer en mode sombre
     
-    # Mode sombre - Thème moderne
+    # Mode sombre - EpiHack
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: green
       accent: teal
       toggle:
         icon: material/weather-sunny
