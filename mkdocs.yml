@@ -112,8 +112,7 @@ plugins:
   - search:
       lang: fr
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-  - tags:
-      tags_file: tags.md
+  - tags
 
 # Navigation
 nav:
@@ -138,7 +137,6 @@ nav:
       - services/auth/index.md
       - SSH: services/auth/ssh.md
       - FTP: services/auth/ftp.md
-  - 🏷️ Tags: tags.md
   - À propos: about.md
   - Contribuer: CONTRIBUTING.md
 
