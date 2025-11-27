@@ -48,4 +48,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          cname: configfinder.epihack.dev  # Optionnel : si vous avez un domaine personnalisé
+          cname: configfinder.epihack.tech  # Optionnel : si vous avez un domaine personnalisé

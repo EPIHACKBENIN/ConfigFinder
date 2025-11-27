@@ -1,0 +1,274 @@
+/* ===================================
+   ConfigFinder - Custom Cybersec Theme
+   =================================== */
+
+:root {
+  /* Couleurs cybersec */
+  --cyber-cyan: #00ffff;
+  --cyber-green: #00ff41;
+  --cyber-purple: #bd93f9;
+  --cyber-pink: #ff79c6;
+  --cyber-red: #ff5555;
+  --cyber-orange: #ffb86c;
+  --cyber-yellow: #f1fa8c;
+  
+  /* Backgrounds */
+  --bg-dark: #0d1117;
+  --bg-darker: #010409;
+  --bg-card: #161b22;
+  
+  /* Bordures */
+  --border-cyber: 2px solid var(--cyber-cyan);
+}
+
+/* ===================================
+   Mode Sombre - Thème Hacker
+   =================================== */
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #000000;
+  --md-primary-bg-color: var(--cyber-cyan);
+  --md-accent-fg-color: var(--cyber-cyan);
+  
+  /* Backgrounds personnalisés */
+  --md-default-bg-color: var(--bg-dark);
+  --md-code-bg-color: var(--bg-darker);
+}
+
+/* Header avec effet glow */
+[data-md-color-scheme="slate"] .md-header {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  border-bottom: 1px solid var(--cyber-cyan);
+}
+
+/* Logo avec effet glow */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  filter: drop-shadow(0 0 8px var(--cyber-cyan));
+}
+
+/* Navigation tabs */
+[data-md-color-scheme="slate"] .md-tabs {
+  background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Cards avec effet cyber */
+.md-typeset .grid.cards > * {
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > * {
+  background: var(--bg-card);
+}
+
+.md-typeset .grid.cards > *:hover {
+  border-color: var(--cyber-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Admonitions avec thème cybersec */
+[data-md-color-scheme="slate"] .md-typeset .admonition.success,
+[data-md-color-scheme="slate"] .md-typeset details.success {
+  border-color: var(--cyber-green);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .success > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .success > summary {
+  background-color: rgba(0, 255, 65, 0.1);
+  border-left: 4px solid var(--cyber-green);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.info,
+[data-md-color-scheme="slate"] .md-typeset details.info {
+  border-color: var(--cyber-cyan);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .info > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .info > summary {
+  background-color: rgba(0, 255, 255, 0.1);
+  border-left: 4px solid var(--cyber-cyan);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.warning,
+[data-md-color-scheme="slate"] .md-typeset details.warning {
+  border-color: var(--cyber-orange);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .warning > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .warning > summary {
+  background-color: rgba(255, 184, 108, 0.1);
+  border-left: 4px solid var(--cyber-orange);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.danger,
+[data-md-color-scheme="slate"] .md-typeset details.danger {
+  border-color: var(--cyber-red);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .danger > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .danger > summary {
+  background-color: rgba(255, 85, 85, 0.1);
+  border-left: 4px solid var(--cyber-red);
+}
+
+/* Code blocks avec effet terminal */
+[data-md-color-scheme="slate"] .md-typeset code {
+  background-color: var(--bg-darker);
+  color: var(--cyber-green);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  background-color: var(--bg-darker);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Inline code */
+[data-md-color-scheme="slate"] .md-typeset :not(pre) > code {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: var(--cyber-cyan);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
+/* Boutons avec effet cyber */
+.md-typeset .md-button {
+  border: 2px solid var(--cyber-cyan);
+  transition: all 0.3s ease;
+}
+
+.md-typeset .md-button:hover {
+  background-color: var(--cyber-cyan);
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--cyber-cyan);
+  color: #000;
+  border-color: var(--cyber-cyan);
+}
+
+.md-typeset .md-button--primary:hover {
+  background-color: var(--cyber-green);
+  border-color: var(--cyber-green);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+/* Search bar */
+[data-md-color-scheme="slate"] .md-search__input {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+[data-md-color-scheme="slate"] .md-search__input:focus {
+  border-color: var(--cyber-cyan);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+[data-md-color-scheme="slate"] .md-search__input::placeholder {
+  color: rgba(0, 255, 255, 0.5);
+}
+
+/* Tables */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: rgba(0, 255, 255, 0.1);
+  border-bottom: 2px solid var(--cyber-cyan);
+  color: var(--cyber-cyan);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:hover {
+  background-color: rgba(0, 255, 255, 0.05);
+}
+
+/* Links avec effet glow */
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: var(--cyber-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: var(--cyber-green);
+  text-shadow: 0 0 8px var(--cyber-green);
+}
+
+/* Sidebar */
+[data-md-color-scheme="slate"] .md-sidebar {
+  background-color: var(--bg-dark);
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: var(--cyber-cyan);
+  font-weight: 600;
+}
+
+/* Footer */
+[data-md-color-scheme="slate"] .md-footer {
+  background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+  border-top: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Scrollbar personnalisée */
+[data-md-color-scheme="slate"] ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+  background: var(--cyber-cyan);
+  border-radius: 5px;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--cyber-green);
+  box-shadow: 0 0 10px var(--cyber-green);
+}
+
+/* Animation de chargement */
+@keyframes glitch {
+  0% { text-shadow: 2px 0 var(--cyber-cyan); }
+  50% { text-shadow: -2px 0 var(--cyber-pink); }
+  100% { text-shadow: 2px 0 var(--cyber-cyan); }
+}
+
+.md-typeset h1 {
+  animation: glitch 3s ease-in-out infinite;
+}
+
+/* Tags */
+[data-md-color-scheme="slate"] .md-tag {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: var(--cyber-cyan);
+  border: 1px solid var(--cyber-cyan);
+}
+
+/* Copy button pour code */
+[data-md-color-scheme="slate"] .md-clipboard {
+  color: var(--cyber-cyan);
+}
+
+[data-md-color-scheme="slate"] .md-clipboard:hover {
+  color: var(--cyber-green);
+}
+
+/* Responsive */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+  }
+}
