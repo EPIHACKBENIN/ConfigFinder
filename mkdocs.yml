@@ -1,10 +1,10 @@
 site_name: ConfigFinder
-site_url: https://epihack.github.io/configfinder/
+site_url: https://epihackbenin.github.io/ConfigFinder/
 site_description: Le GTFOBins des fichiers de configuration - Référence rapide pour pentesters
 site_author: EPIHACK
 
-repo_name: epihack/configfinder
-repo_url: https://github.com/epihack/configfinder
+repo_name: EPIHACKBENIN/ConfigFinder
+repo_url: https://github.com/EPIHACKBENIN/ConfigFinder
 edit_uri: edit/main/docs/
 
 theme:
@@ -12,20 +12,20 @@ theme:
   language: fr
   
   palette:
-    # Mode clair - Thème cybersec
+    # Mode clair - Thème moderne
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: black
-      accent: cyan
+      primary: indigo
+      accent: teal
       toggle:
         icon: material/weather-night
         name: Passer en mode sombre
     
-    # Mode sombre - Thème hacker
+    # Mode sombre - Thème moderne
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: cyan
+      primary: indigo
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: Passer en mode clair
@@ -146,7 +146,7 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/epihack
+      link: https://github.com/EPIHACKBENIN
       name: EPIHACK sur GitHub
     - icon: fontawesome/solid/envelope
       link: mailto:epihack.benin@gmail.com
@@ -178,5 +178,5 @@ extra_javascript:
 
 # Copyright
 copyright: |
-  Copyright &copy; 2025 <a href="https://github.com/epihack" target="_blank">EPIHACK</a> - 
-  <a href="https://github.com/epihack/configfinder/blob/main/LICENSE" target="_blank">Licence MIT</a>
+  Copyright &copy; 2025 <a href="https://github.com/EPIHACKBENIN" target="_blank">EPIHACK</a> - 
+  <a href="https://github.com/EPIHACKBENIN/ConfigFinder/blob/main/LICENSE" target="_blank">Licence MIT</a>
