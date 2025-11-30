@@ -1,34 +1,34 @@
 /* ===================================
    ConfigFinder - EpiHack Theme
-   Couleur principale: Vert
+   Primary Color: Green
    =================================== */
 
 :root {
-  /* Palette EpiHack - Vert */
+  /* EpiHack Palette - Green */
   --epihack-green: #00d084;
   --epihack-green-light: #00ff9d;
   --epihack-green-dark: #00a86b;
   --epihack-green-darker: #008554;
   
-  /* Couleurs d'accent */
+  /* Accent colors */
   --accent-blue: #0ea5e9;
   --accent-purple: #a855f7;
   --accent-orange: #f59e0b;
   --accent-red: #ef4444;
   
-  /* Backgrounds mode clair */
+  /* Light mode backgrounds */
   --bg-light: #ffffff;
   --bg-light-secondary: #f8fafc;
   --bg-light-tertiary: #f1f5f9;
   
-  /* Backgrounds mode sombre */
+  /* Dark mode backgrounds */
   --bg-dark: #0f172a;
   --bg-dark-secondary: #1e293b;
   --bg-dark-tertiary: #334155;
 }
 
 /* ===================================
-   MODE CLAIR - Design Moderne
+   LIGHT MODE - Modern Design
    =================================== */
 
 [data-md-color-scheme="default"] {
@@ -38,18 +38,18 @@
   --md-accent-fg-color: var(--epihack-green-dark);
 }
 
-/* Header mode clair */
+/* Header light mode */
 [data-md-color-scheme="default"] .md-header {
   background: linear-gradient(135deg, var(--epihack-green) 0%, var(--epihack-green-dark) 100%);
   box-shadow: 0 2px 10px rgba(0, 208, 132, 0.15);
 }
 
-/* Tabs mode clair */
+/* Tabs light mode */
 [data-md-color-scheme="default"] .md-tabs {
   background: linear-gradient(135deg, var(--epihack-green-dark) 0%, var(--epihack-green) 100%);
 }
 
-/* Cards mode clair */
+/* Cards light mode */
 [data-md-color-scheme="default"] .md-typeset .grid.cards > * {
   background: var(--bg-light);
   border: 1px solid #e2e8f0;
@@ -60,9 +60,10 @@
   border-color: var(--epihack-green);
   box-shadow: 0 8px 24px rgba(0, 208, 132, 0.15);
   transform: translateY(-4px);
+  background: #ffffff;
 }
 
-/* Admonitions mode clair */
+/* Admonitions light mode */
 [data-md-color-scheme="default"] .md-typeset .admonition.success,
 [data-md-color-scheme="default"] .md-typeset details.success {
   border-color: var(--epihack-green);
@@ -107,7 +108,7 @@
   border-left: 4px solid var(--accent-red);
 }
 
-/* Code blocks mode clair */
+/* Code blocks light mode */
 [data-md-color-scheme="default"] .md-typeset code {
   background-color: var(--bg-light-tertiary);
   color: #334155;
@@ -129,7 +130,7 @@
 }
 
 /* ===================================
-   MODE SOMBRE - Design Moderne
+   DARK MODE - Modern Design
    =================================== */
 
 [data-md-color-scheme="slate"] {
@@ -138,25 +139,25 @@
   --md-primary-fg-color--dark: var(--epihack-green-dark);
   --md-accent-fg-color: var(--epihack-green-light);
   
-  /* Backgrounds personnalisés */
+  /* Custom backgrounds */
   --md-default-bg-color: var(--bg-dark);
   --md-code-bg-color: var(--bg-dark-tertiary);
 }
 
-/* Header mode sombre */
+/* Header dark mode */
 [data-md-color-scheme="slate"] .md-header {
   background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-secondary) 100%);
   box-shadow: 0 2px 10px rgba(0, 208, 132, 0.1);
   border-bottom: 1px solid rgba(0, 208, 132, 0.2);
 }
 
-/* Tabs mode sombre */
+/* Tabs dark mode */
 [data-md-color-scheme="slate"] .md-tabs {
   background: linear-gradient(135deg, var(--bg-dark-secondary) 0%, var(--bg-dark) 100%);
   border-bottom: 1px solid rgba(0, 208, 132, 0.15);
 }
 
-/* Cards mode sombre */
+/* Cards dark mode */
 [data-md-color-scheme="slate"] .md-typeset .grid.cards > * {
   background: var(--bg-dark-secondary);
   border: 1px solid rgba(0, 208, 132, 0.15);
@@ -167,9 +168,10 @@
   border-color: var(--epihack-green);
   box-shadow: 0 8px 24px rgba(0, 208, 132, 0.2);
   transform: translateY(-4px);
+  background: var(--bg-dark-tertiary);
 }
 
-/* Admonitions mode sombre */
+/* Admonitions dark mode */
 [data-md-color-scheme="slate"] .md-typeset .admonition.success,
 [data-md-color-scheme="slate"] .md-typeset details.success {
   border-color: var(--epihack-green);
@@ -218,7 +220,7 @@
   border-left: 4px solid var(--accent-red);
 }
 
-/* Code blocks mode sombre */
+/* Code blocks dark mode */
 [data-md-color-scheme="slate"] .md-typeset code {
   background-color: var(--bg-dark-tertiary);
   color: #e2e8f0;
@@ -245,11 +247,13 @@
 }
 
 /* ===================================
-   COMPOSANTS COMMUNS
+   COMMON COMPONENTS
    =================================== */
 
-/* Boutons */
+/* Buttons - FIXED CONTRAST */
 .md-typeset .md-button {
+  background-color: transparent;
+  color: var(--epihack-green-dark);
   border: 2px solid var(--epihack-green);
   border-radius: 6px;
   transition: all 0.3s ease;
@@ -257,23 +261,47 @@
 }
 
 .md-typeset .md-button:hover {
-  background-color: var(--epihack-green);
-  color: white;
+  background-color: var(--epihack-green-dark);
+  color: #ffffff;
+  border-color: var(--epihack-green-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 208, 132, 0.3);
 }
 
+[data-md-color-scheme="slate"] .md-typeset .md-button {
+  color: var(--epihack-green-light);
+  border-color: var(--epihack-green);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button:hover {
+  background-color: var(--epihack-green);
+  color: #0f172a;
+  border-color: var(--epihack-green);
+}
+
 .md-typeset .md-button--primary {
   background-color: var(--epihack-green);
-  color: white;
+  color: #ffffff;
   border-color: var(--epihack-green);
 }
 
 .md-typeset .md-button--primary:hover {
   background-color: var(--epihack-green-dark);
+  color: #ffffff;
   border-color: var(--epihack-green-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 208, 132, 0.4);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary {
+  background-color: var(--epihack-green);
+  color: #0f172a;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover {
+  background-color: var(--epihack-green-light);
+  color: #0f172a;
+  border-color: var(--epihack-green-light);
 }
 
 /* Search bar */
@@ -332,31 +360,39 @@
 }
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:hover {
-  background-color: rgba(0, 208, 132, 0.05);
+  background-color: rgba(0, 208, 132, 0.08);
 }
 
-/* Links */
+/* Links - IMPROVED READABILITY */
 [data-md-color-scheme="default"] .md-typeset a {
-  color: var(--epihack-green-dark);
+  color: var(--epihack-green-darker);
   font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
 }
 
 [data-md-color-scheme="default"] .md-typeset a:hover {
-  color: var(--epihack-green);
+  color: var(--epihack-green-dark);
+  border-bottom-color: var(--epihack-green);
 }
 
 [data-md-color-scheme="slate"] .md-typeset a {
   color: var(--epihack-green-light);
   font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
 }
 
 [data-md-color-scheme="slate"] .md-typeset a:hover {
   color: var(--epihack-green);
+  border-bottom-color: var(--epihack-green);
 }
 
-/* Navigation active */
+/* Active navigation */
 [data-md-color-scheme="default"] .md-nav__link--active {
-  color: var(--epihack-green-dark);
+  color: var(--epihack-green-darker);
   font-weight: 600;
 }
 
@@ -402,7 +438,7 @@
   font-weight: 500;
 }
 
-/* Copy button pour code */
+/* Copy button for code */
 [data-md-color-scheme="default"] .md-clipboard {
   color: var(--epihack-green-dark);
 }
@@ -419,7 +455,7 @@
   color: var(--epihack-green);
 }
 
-/* Scrollbar personnalisée */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
@@ -453,7 +489,7 @@
   background: var(--epihack-green-light);
 }
 
-/* Animation subtile pour les titres */
+/* Subtle animation for titles */
 .md-typeset h1 {
   background: linear-gradient(135deg, var(--epihack-green) 0%, var(--epihack-green-dark) 100%);
   -webkit-background-clip: text;

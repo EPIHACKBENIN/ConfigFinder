@@ -1,34 +1,32 @@
 site_name: ConfigFinder
 site_url: https://epihackbenin.github.io/ConfigFinder/
-site_description: Le GTFOBins des fichiers de configuration - Référence rapide pour pentesters
+site_description: The GTFOBins of configuration files - Quick reference for pentesters
 site_author: EPIHACK
-
 repo_name: EPIHACKBENIN/ConfigFinder
 repo_url: https://github.com/EPIHACKBENIN/ConfigFinder
 edit_uri: edit/main/docs/
 
 theme:
   name: material
-  language: fr
-  
+  language: en
   palette:
-    # Mode clair - EpiHack
+    # Light mode - EpiHack
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: green
       accent: teal
       toggle:
         icon: material/weather-night
-        name: Passer en mode sombre
+        name: Switch to dark mode
     
-    # Mode sombre - EpiHack
+    # Dark mode - EpiHack
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: green
       accent: teal
       toggle:
         icon: material/weather-sunny
-        name: Passer en mode clair
+        name: Switch to light mode
   
   font:
     text: Roboto
@@ -61,9 +59,10 @@ theme:
     repo: fontawesome/brands/github
     edit: material/pencil
     view: material/eye
-    logo: material/shield-search
+  
+  logo: material/shield-search
 
-# Extensions Markdown
+# Markdown Extensions
 markdown_extensions:
   # Python Markdown
   - abbr
@@ -75,7 +74,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-      permalink_title: Lien permanent
+      permalink_title: Permanent link
   
   # Python Markdown Extensions
   - pymdownx.arithmatex:
@@ -110,64 +109,64 @@ markdown_extensions:
 # Plugins
 plugins:
   - search:
-      lang: fr
+      lang: en
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - tags
 
 # Navigation
 nav:
-  - Accueil: index.md
+  - Home: index.md
   - Services:
-    - services/index.md
-    - Web Servers:
-      - services/web-servers/index.md
-      - Apache: services/web-servers/apache.md
-      - Nginx: services/web-servers/nginx.md
-      - IIS: services/web-servers/iis.md
-    - Databases:
-      - services/databases/index.md
-      - MySQL: services/databases/mysql.md
-      - PostgreSQL: services/databases/postgresql.md
-      - MongoDB: services/databases/mongodb.md
-    - CMS:
-      - services/cms/index.md
-      - WordPress: services/cms/wordpress.md
-      - Drupal: services/cms/drupal.md
-    - Authentication:
-      - services/auth/index.md
-      - SSH: services/auth/ssh.md
-      - FTP: services/auth/ftp.md
-  - À propos: about.md
-  - Contribuer: CONTRIBUTING.md
+      - services/index.md
+      - Web Servers:
+          - services/web-servers/index.md
+          - Apache: services/web-servers/apache.md
+          - Nginx: services/web-servers/nginx.md
+          - IIS: services/web-servers/iis.md
+      - Databases:
+          - services/databases/index.md
+          - MySQL: services/databases/mysql.md
+          - PostgreSQL: services/databases/postgresql.md
+          - MongoDB: services/databases/mongodb.md
+      - CMS:
+          - services/cms/index.md
+          - WordPress: services/cms/wordpress.md
+          - Drupal: services/cms/drupal.md
+      - Authentication:
+          - services/auth/index.md
+          - SSH: services/auth/ssh.md
+          - FTP: services/auth/ftp.md
+  - About: about.md
+  - Contributing: CONTRIBUTING.md
 
-# Configuration supplémentaire
+# Additional configuration
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/EPIHACKBENIN
-      name: EPIHACK sur GitHub
+      name: EPIHACK on GitHub
     - icon: fontawesome/solid/envelope
       link: mailto:epihack.benin@gmail.com
-      name: Nous contacter
+      name: Contact us
   
   analytics:
     feedback:
-      title: Cette page vous a été utile ?
+      title: Was this page helpful?
       ratings:
         - icon: material/emoticon-happy-outline
-          name: Très utile
+          name: Very helpful
           data: 1
           note: >-
-            Merci pour votre retour !
+            Thank you for your feedback!
         - icon: material/emoticon-sad-outline
-          name: Peut être améliorée
+          name: Could be improved
           data: 0
           note: >-
-            Merci ! Aidez-nous à améliorer cette page en ouvrant une issue sur GitHub.
+            Thanks! Help us improve this page by opening an issue on GitHub.
   
   generator: false
 
-# CSS et JS personnalisés
+# Custom CSS and JS
 extra_css:
   - stylesheets/extra.css
 
@@ -176,5 +175,4 @@ extra_javascript:
 
 # Copyright
 copyright: |
-  Copyright &copy; 2025 <a href="https://github.com/EPIHACKBENIN" target="_blank">EPIHACK</a> - 
-  <a href="https://github.com/EPIHACKBENIN/ConfigFinder/blob/main/LICENSE" target="_blank">Licence MIT</a>
+  Copyright © 2025 EPIHACK - MIT License
