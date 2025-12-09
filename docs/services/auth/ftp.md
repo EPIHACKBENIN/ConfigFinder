@@ -154,6 +154,11 @@ C:\Program Files\FileZilla Server\logs
     - Connect as Anonymous without password
 
 !!! tip "Post-Exploitation"
+    - Harvest credentials from configuration files or logs for lateral movement.
+    - Upload web shells or malicious scripts to gain persistent access or escalate privileges.
+    - Use discovered credentials to access other network services or systems.
+    - Exfiltrate sensitive data stored on the FTP server.
+    - Leverage FTP for pivoting to internal networks or as a staging point for further attacks.
 
 ---
 
