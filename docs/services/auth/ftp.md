@@ -86,7 +86,7 @@ File Transfer Protocol is a standard network protocol used to transfer files bet
     ## VSFTPD managed via Homebrew
     /usr/local/etc/vsftpd.conf
 
-    ## FilleZilla Server managed via a dedicated graphical interface
+    ## FileZilla Server managed via a dedicated graphical interface
     %LOCALAPPDATA%\filezilla-server
 
     ## App Store "FTP Server" Apps managed via its graphical interface
