@@ -23,6 +23,11 @@ Database management systems store and manage critical data. This section covers 
   - Horizontal scaling
   - Flexible schema
 
+- **[Redis](redis.md)** - In-memory data structure store
+  - Key-value store
+  - Caching and session management
+  - Pub/Sub messaging
+
 ## Common Pentest Scenarios
 
 ### Initial Access
@@ -47,6 +52,7 @@ Database management systems store and manage critical data. This section covers 
 | MySQL | 3306 | `/etc/mysql/` | root |
 | PostgreSQL | 5432 | `/etc/postgresql/` | postgres |
 | MongoDB | 27017 | `/etc/mongod.conf` | admin |
+| Redis | 6379 | `/etc/redis/redis.conf` | - |
 
 ## Security Best Practices
 

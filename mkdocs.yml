@@ -128,6 +128,7 @@ nav:
           - MySQL: services/databases/mysql.md
           - PostgreSQL: services/databases/postgresql.md
           - MongoDB: services/databases/mongodb.md
+          - Redis: services/databases/redis.md
       - CMS:
           - services/cms/index.md
           - WordPress: services/cms/wordpress.md

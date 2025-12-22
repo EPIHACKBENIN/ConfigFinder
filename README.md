@@ -69,12 +69,12 @@ mkdocs serve
 
 - [x] Infrastructure MkDocs + Material
 - [x] Template de documentation
-- [ ] 10 premiers services (MVP)
+- [x] 10 premiers services (MVP)
 - [ ] 50 services
 - [ ] 100 services
 - [ ] 200+ services
 
-**Services actuels :** `En cours de développement`
+**Services actuels :** `10 services (MVP atteint ✅)`
 
 ## 🎯 Public Cible
 
