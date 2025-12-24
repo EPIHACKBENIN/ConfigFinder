@@ -12,13 +12,13 @@
         <meta name="author" content="EPIHACK">
       
       
-        <link rel="canonical" href="https://epihackbenin.github.io/ConfigFinder/services/databases/mongodb/">
+        <link rel="canonical" href="https://epihackbenin.github.io/ConfigFinder/services/databases/redis/">
       
       
-        <link rel="prev" href="../postgresql/">
+        <link rel="prev" href="../mongodb/">
       
       
-        <link rel="next" href="../redis/">
+        <link rel="next" href="../../cms/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>MongoDB - ConfigFinder</title>
+        <title>Redis - ConfigFinder</title>
       
     
     
@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#redis" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -114,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MongoDB
+              Redis
             
           </span>
         </div>
@@ -766,17 +771,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../mongodb/" class="md-nav__link">
         
   
   
@@ -792,7 +790,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -802,10 +799,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../redis/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redis
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -821,6 +845,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pentest-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pentest Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1188,6 +1331,115 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pentest-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pentest Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1270,7 +1522,7 @@
 
 
   
-    <a href="https://github.com/EPIHACKBENIN/ConfigFinder/edit/main/docs/services/databases/mongodb.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/EPIHACKBENIN/ConfigFinder/edit/main/docs/services/databases/redis.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -1279,16 +1531,157 @@
     
       
     
-    <a href="https://github.com/EPIHACKBENIN/ConfigFinder/raw/main/docs/services/databases/mongodb.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/EPIHACKBENIN/ConfigFinder/raw/main/docs/services/databases/redis.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-  <h1>MongoDB</h1>
-
-
+<h1 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Information</p>
+<p><strong>Category:</strong> Database<br />
+<strong>Tags:</strong> 'database' 'cache' 'nosql' 'redis' 'memory'<br />
+<strong>Criticality:</strong> 🔴 High</p>
+</div>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Redis is an open-source, in-memory data structure store used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, and sorted sets. Redis is widely used for performance-critical applications but is often misconfigured, making it a common target during pentests.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>In-memory storage:</strong> Data is primarily stored in RAM, enabling extremely fast read/write operations.</li>
+<li><strong>Client-server model:</strong> Clients communicate with the Redis server over TCP (default port 6379).</li>
+<li><strong>Persistence (optional):</strong> Data can be saved to disk using RDB snapshots or AOF logs.</li>
+<li><strong>Authentication (optional):</strong> Redis can be configured with a password, but authentication is disabled by default in many setups.</li>
+</ul>
+<hr />
+<h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux (Debian/Ubuntu)</label><label for="__tabbed_1_2">Linux (RedHat/CentOS)</label><label for="__tabbed_1_3">Windows</label><label for="__tabbed_1_4">macOS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Main Redis configuration file</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/etc/redis/redis.conf
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Additional configuration directory (if used)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>/etc/redis/conf.d/
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Main Redis configuration file</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/etc/redis/redis.conf
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Alternative installation paths</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/etc/redis.conf
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Redis configuration file (Microsoft port / third-party builds)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">C</span><span class="p">:\</span><span class="n">Program</span> <span class="n">Files</span><span class="p">\</span><span class="n">Redis</span><span class="p">\</span><span class="n">redis</span><span class="p">.</span><span class="n">windows</span><span class="p">.</span><span class="n">conf</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">C</span><span class="p">:\</span><span class="n">Redis</span><span class="p">\</span><span class="n">redis</span><span class="p">.</span><span class="n">conf</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Redis installed via Homebrew</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/usr/local/etc/redis.conf
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Apple Silicon Homebrew path</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>/opt/homebrew/etc/redis.conf
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="log-files">Log Files<a class="headerlink" href="#log-files" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Debian/Ubuntu</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>/var/log/redis/redis-server.log
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># RedHat/CentOS</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>/var/log/redis/redis.log
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>/var/log/messages
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># Windows</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\R</span>edis<span class="se">\l</span>og<span class="se">\r</span>edis.log
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># macOS (Homebrew)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>/usr/local/var/log/redis.log
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>/opt/homebrew/var/log/redis.log
+</span></code></pre></div>
+<h2 id="credentials">Credentials<a class="headerlink" href="#credentials" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Authentication</p>
+<ul>
+<li>Redis does not enforce authentication by default.</li>
+<li>Password authentication is configured using the <code>requirepass</code> directive in <code>redis.conf</code>.</li>
+<li>ACL-based authentication is available in Redis 6.0+ via the <code>users.acl</code> file.</li>
+</ul>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Example authentication directive</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>requirepass<span class="w"> </span>StrongPasswordHere
+</span></code></pre></div>
+<h2 id="pentest-tips">Pentest Tips<a class="headerlink" href="#pentest-tips" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Reconnaissance</p>
+<ul>
+<li>Scan port 6379 (default Redis port).</li>
+<li>Identify Redis version via banner grabbing.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Misconfiguration Checks</p>
+<ul>
+<li>Check for unauthenticated access.</li>
+<li>Verify if <code>protected-mode</code> is disabled.</li>
+<li>Check bind address (<code>bind 0.0.0.0</code>) allowing external access.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Exploitation</p>
+<ul>
+<li>Write arbitrary files if Redis runs as root and filesystem permissions allow.</li>
+<li>Abuse <code>CONFIG SET dir</code> and <code>dbfilename</code> to write SSH keys or cron jobs.</li>
+<li>Dump in-memory sensitive data (sessions, tokens, credentials).</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Post-Exploitation</p>
+<ul>
+<li>Extract application secrets stored in Redis.</li>
+<li>Use Redis as a pivot point for lateral movement.</li>
+<li>Persist access via modified configuration or scheduled tasks.</li>
+</ul>
+</div>
+<h2 id="useful-commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Check if Redis is reachable</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>redis-cli<span class="w"> </span>-h<span class="w"> </span><span class="o">[</span>target_IP<span class="o">]</span><span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span><span class="w"> </span>ping
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Connect to Redis without authentication</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>redis-cli<span class="w"> </span>-h<span class="w"> </span><span class="o">[</span>target_IP<span class="o">]</span><span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Authenticate (if password is set)</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>AUTH<span class="w"> </span>&lt;password&gt;
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># Get Redis server info</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>INFO
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># List all keys (can be dangerous on production)</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>KEYS<span class="w"> </span>*
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1"># Dump configuration</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>CONFIG<span class="w"> </span>GET<span class="w"> </span>*
+</span></code></pre></div>
+<h2 id="known-vulnerabilities">Known Vulnerabilities<a class="headerlink" href="#known-vulnerabilities" title="Permanent link">&para;</a></h2>
+<details class="danger">
+<summary>CVE-2022-0543 - Remote Code Execution (Lua Sandbox Escape)</summary>
+<p>Affects Debian-based Redis packages due to a misconfigured Lua sandbox, allowing arbitrary code execution.</p>
+</details>
+<hr />
+<h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Template version:</strong> 1.0  </li>
+<li><strong>Last updated:</strong> December 2025  </li>
+<li><strong>Contributor:</strong> EpiHack Benin  </li>
+<li><strong>Sources verified:</strong> Yes</li>
+</ul>
 
 
 
@@ -1376,7 +1769,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../postgresql/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PostgreSQL">
+          <a href="../mongodb/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MongoDB">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1386,20 +1779,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                PostgreSQL
+                MongoDB
               </div>
             </div>
           </a>
         
         
           
-          <a href="../redis/" class="md-footer__link md-footer__link--next" aria-label="Next: Redis">
+          <a href="../../cms/" class="md-footer__link md-footer__link--next" aria-label="Next: 📝 Content Management Systems (CMS)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Redis
+                📝 Content Management Systems (CMS)
               </div>
             </div>
             <div class="md-footer__button md-icon">
