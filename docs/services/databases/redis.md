@@ -141,5 +141,5 @@ CONFIG GET *
 
 - **Template version:** 1.0  
 - **Last updated:** December 2025  
-- **Contributor:** EpiHack Benin  
+- **Contributor:** Laurince AGANI / EpiHack Benin  
 - **Sources verified:** Yes
