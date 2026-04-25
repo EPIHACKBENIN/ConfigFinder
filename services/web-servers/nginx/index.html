@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1614,7 +1614,7 @@
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Nginx (pronounced "engine-x") is a high-performance web server, reverse proxy server, and load balancer. Initially released in 2004 by Igor Sysoev, Nginx is known for its stability, rich feature set, simple configuration, and low resource consumption. It handles concurrent connections efficiently using an event-driven, asynchronous architecture rather than traditional thread-based models.</p>
 <p>Nginx powers approximately 33.8% of all websites globally and is used by high-traffic sites such as Netflix, WordPress.com, GitHub, and Cloudflare. It supports HTTP/1.1, HTTP/2, HTTP/3, WebSocket, SSL/TLS, and can function as a mail proxy (IMAP/POP3/SMTP).</p>
-<p>Common use cases include serving static content, reverse proxying to application servers, load balancing, SSL/TLS termination, caching, and media streaming.</p>
+<p>During a pentest, finding Nginx configuration files is crucial to identify routing rules, backend systems via proxy configurations, and potential misconfigurations like directory traversal or exposed status pages. Common use cases include serving static content, reverse proxying to application servers, load balancing, SSL/TLS termination, caching, and media streaming.</p>
 <hr />
 <h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux (Debian/Ubuntu)</label><label for="__tabbed_1_2">Linux (RedHat/CentOS)</label><label for="__tabbed_1_3">Windows</label><label for="__tabbed_1_4">macOS</label></div>
@@ -1643,6 +1643,10 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Virtual host configurations</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>/etc/nginx/vhosts.d/
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Alternative paths</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>/usr/local/nginx/conf/nginx.conf
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>/usr/local/etc/nginx/nginx.conf
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1651,6 +1655,9 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c"># Additional configs</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">C</span><span class="p">:\</span><span class="n">nginx</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="p">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c"># Alternative installation directory</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="no">[Installation Directory]</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">nginx</span><span class="p">.</span><span class="n">conf</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -1664,6 +1671,9 @@
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Homebrew (Apple Silicon)</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>/opt/homebrew/etc/nginx/nginx.conf
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>/opt/homebrew/etc/nginx/servers/
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># Default System / Source</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>/usr/local/nginx/conf/nginx.conf
 </span></code></pre></div>
 </div>
 </div>
@@ -1678,19 +1688,19 @@
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>/var/log/nginx/access.log
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>/var/log/nginx/error.log
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Windows</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>C:<span class="se">\n</span>ginx<span class="se">\l</span>ogs<span class="se">\a</span>ccess.log
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>C:<span class="se">\n</span>ginx<span class="se">\l</span>ogs<span class="se">\e</span>rror.log
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Custom or Source Compile</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>/usr/local/nginx/logs/access.log
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>/usr/local/nginx/logs/error.log
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># macOS (Homebrew)</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>/usr/local/var/log/nginx/access.log
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>/usr/local/var/log/nginx/error.log
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>/opt/homebrew/var/log/nginx/access.log
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>/opt/homebrew/var/log/nginx/error.log
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1"># Custom installations</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>/usr/local/nginx/logs/access.log
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>/usr/local/nginx/logs/error.log
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Windows</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>C:<span class="se">\n</span>ginx<span class="se">\l</span>ogs<span class="se">\a</span>ccess.log
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>C:<span class="se">\n</span>ginx<span class="se">\l</span>ogs<span class="se">\e</span>rror.log
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1"># macOS (Homebrew)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>/usr/local/var/log/nginx/access.log
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>/usr/local/var/log/nginx/error.log
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>/opt/homebrew/var/log/nginx/access.log
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>/opt/homebrew/var/log/nginx/error.log
 </span></code></pre></div>
 <hr />
 <h2 id="sensitive-files">Sensitive Files<a class="headerlink" href="#sensitive-files" title="Permanent link">&para;</a></h2>
@@ -1706,6 +1716,9 @@
 <li><code>uwsgi_params</code> - uWSGI configuration parameters</li>
 <li><code>proxy_params</code> - Reverse proxy configuration</li>
 <li><code>*.pem</code> - Certificate and key files in PEM format</li>
+<li><code>/etc/ssl/certs/</code> - System certificate store</li>
+<li><code>/etc/ssl/private/</code> - System private keys</li>
+<li><code>/etc/nginx/ssl/</code> - Nginx-specific SSL directory</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -1744,6 +1757,9 @@
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1"># macOS</span>
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>/usr/local/var/www/
 </span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>/opt/homebrew/var/www/
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="c1"># Source Compile / Alternative</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>/usr/local/nginx/html/
 </span></code></pre></div>
 <hr />
 <h2 id="pentest-tips">Pentest Tips<a class="headerlink" href="#pentest-tips" title="Permanent link">&para;</a></h2>
@@ -1776,6 +1792,9 @@
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Comprehensive SSL test</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>./testssl.sh<span class="w"> </span>target.com:443
 </span></code></pre></div></p>
+<p><strong>Check for exposed status pages:</strong>
+- Check HTTP headers for <code>Server: nginx</code>. Sometimes it includes the version unless <code>server_tokens off;</code> is set.
+- Check for exposed status pages like <code>/nginx_status</code> or <code>/status</code>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Enumeration</p>
@@ -1787,6 +1806,7 @@
 <li>Backup files in web root</li>
 <li>Debug/status pages (<code>/nginx_status</code>, <code>/stub_status</code>)</li>
 <li>Default error pages revealing information</li>
+<li>Alias Traversal: A common misconfiguration is a missing trailing slash in the <code>alias</code> directive</li>
 </ul>
 <p><strong>Directory brute-forcing:</strong>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Gobuster</span>
@@ -1832,6 +1852,7 @@
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>curl<span class="w"> </span>http://target.com/web.config
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>curl<span class="w"> </span>http://target.com/.git/config
 </span></code></pre></div></p>
+<p><strong>If you have LFI, read <code>/etc/nginx/nginx.conf</code> and follow the <code>include</code> directives to map out all reverse proxies and internal endpoints.</strong></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Exploitation</p>
@@ -1849,6 +1870,9 @@
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># If proxy_pass has trailing slash but location doesn&#39;t</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>GET<span class="w"> </span>/api../admin<span class="w"> </span>HTTP/1.1
 </span></code></pre></div></p>
+<p><strong>Identify backend proxy addresses:</strong>
+- Look for <code>proxy_pass http://127.0.0.1:8080;</code> to target internal-only applications via SSRF
+- Check for insecure <code>add_header</code> configurations that might allow XSS or CORS bypasses</p>
 <p><strong>HTTP request smuggling:</strong>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># CL.TE smuggling</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>POST<span class="w"> </span>/<span class="w"> </span>HTTP/1.1

