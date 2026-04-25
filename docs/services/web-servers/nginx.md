@@ -11,7 +11,7 @@ Nginx (pronounced "engine-x") is a high-performance web server, reverse proxy se
 
 Nginx powers approximately 33.8% of all websites globally and is used by high-traffic sites such as Netflix, WordPress.com, GitHub, and Cloudflare. It supports HTTP/1.1, HTTP/2, HTTP/3, WebSocket, SSL/TLS, and can function as a mail proxy (IMAP/POP3/SMTP).
 
-Common use cases include serving static content, reverse proxying to application servers, load balancing, SSL/TLS termination, caching, and media streaming.
+During a pentest, finding Nginx configuration files is crucial to identify routing rules, backend systems via proxy configurations, and potential misconfigurations like directory traversal or exposed status pages. Common use cases include serving static content, reverse proxying to application servers, load balancing, SSL/TLS termination, caching, and media streaming.
 
 ---
 
@@ -43,6 +43,10 @@ Common use cases include serving static content, reverse proxying to application
     
     # Virtual host configurations
     /etc/nginx/vhosts.d/
+    
+    # Alternative paths
+    /usr/local/nginx/conf/nginx.conf
+    /usr/local/etc/nginx/nginx.conf
     ```
 
 === "Windows"
@@ -52,6 +56,9 @@ Common use cases include serving static content, reverse proxying to application
     
     # Additional configs
     C:\nginx\conf\conf.d\
+    
+    # Alternative installation directory
+    [Installation Directory]\conf\nginx.conf
     ```
 
 === "macOS"
@@ -66,6 +73,9 @@ Common use cases include serving static content, reverse proxying to application
     # Homebrew (Apple Silicon)
     /opt/homebrew/etc/nginx/nginx.conf
     /opt/homebrew/etc/nginx/servers/
+    
+    # Default System / Source
+    /usr/local/nginx/conf/nginx.conf
     ```
 
 ---
@@ -81,6 +91,10 @@ Common use cases include serving static content, reverse proxying to application
 /var/log/nginx/access.log
 /var/log/nginx/error.log
 
+# Custom or Source Compile
+/usr/local/nginx/logs/access.log
+/usr/local/nginx/logs/error.log
+
 # Windows
 C:\nginx\logs\access.log
 C:\nginx\logs\error.log
@@ -90,10 +104,6 @@ C:\nginx\logs\error.log
 /usr/local/var/log/nginx/error.log
 /opt/homebrew/var/log/nginx/access.log
 /opt/homebrew/var/log/nginx/error.log
-
-# Custom installations
-/usr/local/nginx/logs/access.log
-/usr/local/nginx/logs/error.log
 ```
 
 ---
@@ -111,6 +121,9 @@ C:\nginx\logs\error.log
     - `uwsgi_params` - uWSGI configuration parameters
     - `proxy_params` - Reverse proxy configuration
     - `*.pem` - Certificate and key files in PEM format
+    - `/etc/ssl/certs/` - System certificate store
+    - `/etc/ssl/private/` - System private keys
+    - `/etc/nginx/ssl/` - Nginx-specific SSL directory
 
 !!! warning "Backup files"
     Don't forget to check for backups:
@@ -149,6 +162,9 @@ C:\inetpub\wwwroot\
 # macOS
 /usr/local/var/www/
 /opt/homebrew/var/www/
+
+# Source Compile / Alternative
+/usr/local/nginx/html/
 ```
 
 ---
@@ -187,6 +203,10 @@ C:\inetpub\wwwroot\
     # Comprehensive SSL test
     ./testssl.sh target.com:443
     ```
+    
+    **Check for exposed status pages:**
+    - Check HTTP headers for `Server: nginx`. Sometimes it includes the version unless `server_tokens off;` is set.
+    - Check for exposed status pages like `/nginx_status` or `/status`.
 
 !!! tip "Enumeration"
     **Common misconfigurations to check:**
@@ -197,6 +217,7 @@ C:\inetpub\wwwroot\
     - Backup files in web root
     - Debug/status pages (`/nginx_status`, `/stub_status`)
     - Default error pages revealing information
+    - Alias Traversal: A common misconfiguration is a missing trailing slash in the `alias` directive
     
     **Directory brute-forcing:**
     ```bash
@@ -249,6 +270,8 @@ C:\inetpub\wwwroot\
     curl http://target.com/web.config
     curl http://target.com/.git/config
     ```
+    
+    **If you have LFI, read `/etc/nginx/nginx.conf` and follow the `include` directives to map out all reverse proxies and internal endpoints.**
 
 !!! tip "Exploitation"
     **Path traversal via misconfigured alias/root:**
@@ -268,6 +291,10 @@ C:\inetpub\wwwroot\
     # If proxy_pass has trailing slash but location doesn't
     GET /api../admin HTTP/1.1
     ```
+    
+    **Identify backend proxy addresses:**
+    - Look for `proxy_pass http://127.0.0.1:8080;` to target internal-only applications via SSRF
+    - Check for insecure `add_header` configurations that might allow XSS or CORS bypasses
     
     **HTTP request smuggling:**
     ```bash
